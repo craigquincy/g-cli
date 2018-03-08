@@ -5,6 +5,8 @@
 https://babun.github.io/
 - For OS X/Linux make sure you can open the Terminal
 
+## Slides
+[Command Line Slides](CommandLine-Craig.pdf)
 
 ## Practice Makes Perfect
 https://github.com/veltman/clmystery
