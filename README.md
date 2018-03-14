@@ -42,7 +42,6 @@ Objectives:
 * Use Express Generator to create a basic REST APP
 * Understand the structure of an Express App
 * Create HTTP requests from the command line
-* Create quick front ends with jade templates
 
 ---
 
