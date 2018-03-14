@@ -1,5 +1,5 @@
-const http = require("http");
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer();
 
@@ -21,8 +21,9 @@ const setData = (newItem) => {
   return data
 }
 
-server.on("request", function(request, response) {
+server.on('request', (request, response) => {
   console.log(request.method, request.url)
+
   switch (request.method) {
     case 'GET':
       response.end(JSON.stringify(getData()))
@@ -31,27 +32,27 @@ server.on("request", function(request, response) {
     case 'POST':
       let bodyData = '';
 
-      request.on('data', function (data) {
+      request.on('data', (data) => {
         bodyData += data;
       });
 
-      request.on('end', function () {
+      request.on('end', () => {
         let data = setData(bodyData)
         response.end(JSON.stringify(data))
       });
       break;
 
     default:
-      response.end("Could not process HTTP method");
+      response.end('Could not process HTTP method');
       break;
   }
 });
 
-server.listen(PORT, function(err){
+server.listen(PORT, (err) => {
   if (err) {
-    console.log(err);
+    console.error(err);
     return
   }
 
-  console.log("I've connected on", PORT);
+  console.log('Connected on', PORT);
 });
